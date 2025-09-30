@@ -1,0 +1,25 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "enabledManagers": [
+    "github-actions"
+  ],
+  "customDatasources": {
+    "allowed-github-actions": {
+      "defaultRegistryUrlTemplate": "https://raw.githubusercontent.com/minijus/renovate-custom-datasource/refs/heads/main/_allowed-versions/{{packageName}}.json"
+    }
+  },
+  "packageRules": [
+    {
+      "matchManagers": [
+        "github-actions"
+      ],
+      "overrideDatasource": "custom.allowed-github-actions"
+    }
+  ],
+  "logLevelRemap": [
+    {
+      "matchMessage": "/^Custom datasource/",
+      "newLogLevel": "info"
+    }
+  ]
+}
